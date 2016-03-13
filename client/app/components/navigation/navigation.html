@@ -1,0 +1,50 @@
+<div ng-controller='NavbarCtrl'>
+	<md-toolbar class='md-whiteframe-2dp ni_site_navbar' layout='row' layout-align='space-between center'>
+		<span layout='row' layout-align='start center'>
+			<md-button class='ni_brand_button' ng-click='sideNavToggler("left")'><img class='ni_brand_img' src='./assets/images/niLogo_jan2016.png'></md-button>
+		</span>
+
+		<span layout='row' layout-align='center center'>
+			<span ng-if='isLoggedIn()' class='navbar_text'>Hi {{ getCurrentUserFirstName() }}!</span>
+		<md-button ng-show='isAdmin()' href='/admin'>Admin</md-button>
+		<md-fab-speed-dial md-direction='left' md-open='falseValue' ng-class='"md-scale"' ng-cloak class='ni_navbar_fab_toolbar' ng-click='fabButtonClick()'>
+			<md-fab-trigger>
+				<md-button aria-label="menu" class="md-fab md-mini md-accent md-hue-3 ni_navbar_fab_trigger">
+					<md-icon class='material-icons navbar_fab_icon' ng-if='!isLoggedIn()'>person</md-icon>
+					<md-icon class='material-icons navbar_fab_icon' ng-if='isLoggedIn()'>power_settings_new</md-icon>
+				</md-button>
+			</md-fab-trigger>
+			<md-fab-actions class="md-toolbar-tools ni_navbar_fab_item">
+				<md-button ng-if='!isLoggedIn()' class='ni_navbar_add_pad md-fab md-mini md-primary' ng-click="loginOauth('facebook')"><i class='fa fa-facebook-f fa-lg'></i></md-button>
+				<md-button ng-if='!isLoggedIn()' class='ni_navbar_add_pad md-fab md-mini md-primary' ng-click="loginOauth('google')"><i class='fa fa-google-plus fa-lg'></i></md-button>
+				<md-button ng-if='!isLoggedIn()' class='ni_navbar_add_pad md-fab md-mini md-primary' ng-click=""><i class='fa fa-user fa-lg'></i></md-button>
+			</md-fab-actions>
+		</md-fab-speed-dial>
+
+
+		</span>
+	</md-toolbar>
+
+	<md-sidenav class='ni_sidenav_left md-whiteframe-1dp' md-component-id='left' layout='column'>
+		<div class='sidenav_spacer md-primary md-hue-2'></div>
+		<md-toolbar class='md-primary md-hue-2' layout='row' layout-align='space-between center'>
+			<h1 class='md-toolbar-tools'>Site Navigation</h1>
+			<md-button class='md-icon-button' ng-click='sideNavToggler("left")'>
+				<md-icon class='material-icons'>close</md-icon>
+			</md-button>
+		</md-toolbar>
+		<md-divider class='ni_divider_thick md-accent md-hue-3'></md-divider>
+		<md-content flex>
+			<md-list>
+				<md-list-item class="md-3-line" ng-repeat='page in navPages' layout='row'>
+					<md-button layout='row' layout-align='start center' flex ng-click='goToPage(page.pageUrl)' style='display: inherit'>
+						<img ng-src="./assets/images/{{page.imageTag}}.png" style='height: 50px; width: auto;'>
+						<div flex='5'></div>
+						<h3>{{page.pageTitle}}</h3>
+					</md-button>
+				</md-list-item>
+			</md-list>
+		</md-content>
+	</md-sidenav>
+
+</div>

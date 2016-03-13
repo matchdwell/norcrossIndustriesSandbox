@@ -1,0 +1,125 @@
+
+.ni_site_navbar {
+	position: fixed;
+	top: 0px;
+  background-color: rgba(55,71,79,0.50)!important;
+  max-height: 56px!important;
+  min-height: 56px!important;
+	z-index: 61;
+}
+
+.ni_brand_button {
+	max-width: 35px!important;
+	min-width: 35px!important;
+	padding: 0!important;
+	padding-right: 0!important;
+	padding-left: 0!important;
+	margin-top: 8px;
+	margin-left: 10px;
+	.ni_brand_img {
+		display: block;
+		height: 35px;
+		width: auto;
+		background-position: center center;
+	}
+}
+
+.ni_navbar_fab_toolbar {
+  max-height: 56px!important;
+  min-height: 56px!important;
+  .ni_navbar_fab_item {
+    max-height: 56px!important;
+    min-height: 56px!important;
+    .md-fab-toolbar-content {
+      max-height: 56px!important;
+      min-height: 56px!important;
+      md-toolbar {
+        max-height: 56px!important;
+        min-height: 56px!important;
+      }
+    }
+  }
+}
+
+.navbar_text {
+	font-size: 18px;
+	position: fixed;
+	top: 17px;
+	right: 65px;
+}
+
+
+.navbar_text.ng-leave {
+	transition-property: all;
+	transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+	transition-delay: 0s;
+	transition-duration: 0.5s;
+}
+
+.navbar_text.ng-enter,
+.navbar_text.ng-leave.ng-leave-active {
+	opacity: 0!important;
+}
+
+.navbar_text.ng-leave,
+.navbar_text.ng-enter.ng-enter-active {
+	opacity: 1!important;
+}
+
+
+.ni_navbar_fab_trigger {
+  margin-top: 8px!important;
+  margin-bottom: 8px!important;
+  .md-fab-toolbar-background {
+    opacity: 0.05!important;
+  }
+}
+
+.ni_navbar_fab_item {
+  .md-fab-action-item {
+    margin-top: 0px!important;
+  }
+}
+
+.md-scale:not(.md-is-open) .md-fab-action-item {
+  opacity: 0;
+}
+
+.ni_navbar_add_pad {
+  margin-top: 3px!important;
+}
+
+.md-accent.md-hue-2,
+.md-accent.md-hue-3 {
+	md-icon {
+		color: rgba(255,255,255, 0.87)!important;
+	}
+	color: rgba(255,255,255, 0.87)!important;
+}
+
+.sidenav_spacer{
+	height: 56px;
+	opacity: 0.0;
+}
+
+.ni_sidenav_left {
+	background-color: rgba(#FFFFFF, 0.0)!important;
+	position: fixed;
+	top: 0;
+	height: 100vh!important;
+	max-height: 100vh!important;
+	min-height: 100vh!important;
+	md-content {
+		background-color: rgba(#FFFFFF, 0.8)!important;
+	}
+}
+
+.md-sidenav-backdrop {
+	top: 0px;
+	position: fixed;
+}
+
+.ni_divider_thick {
+	border-top-width: 3px!important;
+	border-top-color: rgb(0,191,165)!important;
+}
